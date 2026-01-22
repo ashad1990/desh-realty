@@ -44,7 +44,7 @@ export default function Services() {
               </label>
               <select
                 value={selectedType}
-                onChange={(e) => setSelectedType(e.target.value as any)}
+                onChange={(e) => setSelectedType(e.target.value as "all" | "sale" | "rent")}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="all">All Types</option>
@@ -60,7 +60,7 @@ export default function Services() {
               </label>
               <select
                 value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value as any)}
+                onChange={(e) => setSelectedCategory(e.target.value as "all" | "land" | "house" | "apartment")}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="all">All Categories</option>
@@ -77,7 +77,7 @@ export default function Services() {
               </label>
               <select
                 value={selectedFurnished}
-                onChange={(e) => setSelectedFurnished(e.target.value as any)}
+                onChange={(e) => setSelectedFurnished(e.target.value as "all" | "furnished" | "non-furnished")}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="all">All</option>
