@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import { MapPin, Bed, Bath, Building2, Home as HomeIcon } from 'lucide-react';
 import { properties, Property } from '@/data/properties';
 import { useSearchParams } from 'next/navigation';
 
-export default function ServicesPage() {
+function ServicesContent() {
   const searchParams = useSearchParams();
   const [filteredProperties, setFilteredProperties] = useState<Property[]>(properties);
   const [activeType, setActiveType] = useState<'all' | 'sale' | 'rent'>('all');
@@ -302,5 +302,13 @@ export default function ServicesPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <ServicesContent />
+    </Suspense>
   );
 }
