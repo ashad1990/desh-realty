@@ -34,13 +34,11 @@ function ServicesContent() {
       filtered = filtered.filter(p => p.category === activeCategory);
     }
 
-    // Filter by furnished (only for houses)
-    if (activeFurnished !== 'all' && activeCategory === 'house') {
-      if (activeFurnished === 'furnished') {
-        filtered = filtered.filter(p => p.furnished === true);
-      } else {
-        filtered = filtered.filter(p => p.furnished === false);
-      }
+    // Filter by furnished (only for rent houses)
+    if (activeFurnished !== 'all' && activeType === 'rent' && activeCategory === 'house') {
+      filtered = filtered.filter(p => 
+        activeFurnished === 'furnished' ? p.furnished === true : p.furnished === false
+      );
     }
 
     setFilteredProperties(filtered);
