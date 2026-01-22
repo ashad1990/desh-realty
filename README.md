@@ -1,6 +1,6 @@
 # Desh Realty 🏠
 
-A modern, mobile-first real estate platform for buying, selling, and renting properties in Bangladesh.
+A modern, mobile-first real estate platform for buying, selling, and renting properties in Bangladesh.   
 
 ## Features
 
